@@ -16,9 +16,11 @@
 
 #define LOG_TAG "DSP-entry"
 
-#include <cutils/log.h>
+#include <unistd.h>
+#include <log/log.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include <media/AudioEffect.h>
 #include <hardware/audio_effect.h>
 #include <audio_effects/effect_bassboost.h>
 #include <audio_effects/effect_equalizer.h>

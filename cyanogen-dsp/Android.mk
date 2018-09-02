@@ -17,29 +17,47 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 
 LOCAL_SRC_FILES := \
-	cyanogen-dsp.cpp \
-	Biquad.cpp \
-	Delay.cpp \
-	Effect.cpp \
-	EffectBassBoost.cpp \
-	EffectCompression.cpp \
-	EffectEqualizer.cpp \
-	EffectVirtualizer.cpp \
-	EffectStereoWide.cpp \
-	FIR16.cpp
+    cyanogen-dsp.cpp \
+    Biquad.cpp \
+    Delay.cpp \
+    Effect.cpp \
+    EffectBassBoost.cpp \
+    EffectCompression.cpp \
+    EffectEqualizer.cpp \
+    EffectVirtualizer.cpp \
+    EffectStereoWide.cpp \
+    FIR16.cpp
+
+LOCAL_HEADER_LIBRARIES := \
+    libaudio_system_headers \
+    libaudioclient_headers \
+    libeffects_headers
+
+LOCAL_AIDL_INCLUDES := \
+    frameworks/av/media/libaudioclient/aidl
 
 LOCAL_C_INCLUDES += \
-        frameworks/av/include \
-        hardware/libhardware/include \
-        system/core/include \
-        system/core/base/include \
-        system/media/audio/include \
-        system/media/audio_effects/include \
-        frameworks/native/libs/binder/include
+    frameworks/av/include \
+    hardware/libhardware/include \
+    system/core/include \
+    system/core/base/include \
+    system/media/audio/include \
+    system/media/audio_effects/include \
+    frameworks/native/libs/binder/include
 
 LOCAL_SHARED_LIBRARIES := \
-	libcutils \
-	liblog
+     libcutils \
+     liblog
+
+LOCAL_CFLAGS += -Wall -Werror
+LOCAL_CFLAGS += \
+    -Wno-error \
+    -Wno-format \
+    -Wno-unused-function \
+    -Wno-unused-value \
+    -Wno-unused-parameter \
+    -Wno-gnu-designator \
+    -Wno-gnu-variable-sized-type-not-at-end
 
 include $(BUILD_SHARED_LIBRARY)
 
