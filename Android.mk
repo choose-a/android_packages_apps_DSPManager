@@ -2,7 +2,7 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
-
+LOCAL_SDK_VERSION := current
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 appcompat_dir := ./prebuilts/sdk/current/support/v7/appcompat/res
